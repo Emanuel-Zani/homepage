@@ -24,23 +24,27 @@ const fetchTestimonials = async (limit: number = 3): Promise<Testimonial[]> => {
 const Testimonials = () => {
   const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
-  const [limit, setLimit] = useState<number>(3);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const limit = 3; // Se eliminó setLimit
 
   useEffect(() => {
     fetchTestimonials(limit).then((data) => {
       setTestimonials(data);
       setLoading(false);
     });
-  }, [limit]);
+  }, []);
 
   const nextTestimonial = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+    setCurrentIndex((prevIndex) =>
+      testimonials.length ? (prevIndex + 1) % testimonials.length : 0
+    );
   };
 
   const prevTestimonial = () => {
-    setCurrentIndex(
-      (prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length
+    setCurrentIndex((prevIndex) =>
+      testimonials.length
+        ? (prevIndex - 1 + testimonials.length) % testimonials.length
+        : 0
     );
   };
 
@@ -64,7 +68,7 @@ const Testimonials = () => {
           <p className="text-light-text dark:text-dark-text">
             Cargando testimonios...
           </p>
-        ) : (
+        ) : testimonials.length > 0 ? (
           <div className="relative">
             <div className="flex justify-center mb-4">
               <motion.div
@@ -113,6 +117,10 @@ const Testimonials = () => {
               </button>
             </div>
           </div>
+        ) : (
+          <p className="text-light-text dark:text-dark-text">
+            No hay testimonios disponibles.
+          </p>
         )}
       </motion.div>
     </section>
