@@ -53,6 +53,7 @@ Deployment
 This project is deployed live on Vercel. You can view the live demo here:
 
 Live Demo
+https://homepage-plum-three.vercel.app/
 
 Usage
 The homepage is fully responsive and mobile-first.
