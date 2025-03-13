@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import backgroundImage from "../assets/img/BACKGROUND.png";
 
 const DarkModeToggle: React.FC = () => {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
@@ -54,7 +55,12 @@ const DarkModeToggle: React.FC = () => {
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative w-full h-screen flex items-center justify-center text-center text-white bg-light-background dark:bg-dark-background ">
+    <section
+      className="relative w-full h-screen flex items-center justify-center text-center text-white bg-contain bg-bottom bg-no-repeat  bg-light-background dark:bg-dark-background"
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+      }}
+    >
       <DarkModeToggle />
       <motion.div
         initial={{ opacity: 0, y: 50 }}
