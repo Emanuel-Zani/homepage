@@ -5,13 +5,15 @@ import Pricing from "./components/Pricing";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
+import "font-awesome/css/font-awesome.min.css";
+
 const App = () => {
   return (
     <div className="flex flex-col items-center">
       <Hero />
       <Features />
-      <Testimonials />
       <Pricing />
+      <Testimonials />
       <Contact />
       <Footer />
     </div>

@@ -36,7 +36,10 @@ const Contact = () => {
   };
 
   return (
-    <section className="w-full py-20 px-4 flex items-center justify-center min-h-screen bg-light-background dark:bg-dark-background">
+    <section
+      id="contact"
+      className="w-full py-20 px-4 flex items-center justify-center min-h-screen bg-light-background dark:bg-dark-background"
+    >
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -79,7 +82,7 @@ const Contact = () => {
           ></textarea>
           <button
             type="submit"
-            className="w-full py-3 bg-light-primary dark:bg-dark-primary text-white font-semibold rounded-lg shadow-md transition-transform duration-200 hover:scale-105 disabled:opacity-50"
+            className="w-full py-3 bg-light-primary dark:bg-dark-primary text-black font-semibold rounded-lg shadow-md transition-transform duration-200 hover:scale-105 disabled:opacity-50"
             disabled={loading}
           >
             {loading ? "Enviando..." : "Enviar Mensaje"}

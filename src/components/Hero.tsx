@@ -74,7 +74,8 @@ const Hero: React.FC = () => {
           href="#contact"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          className="mt-6 inline-block bg-light-primary dark:bg-dark-primary text-white px-6 sm:px-8 py-3 rounded-lg text-lg font-semibold transition-all"
+          transition={{ bounceDamping: 10, bounceStiffness: 600 }}
+          className="mt-6 inline-block bg-light-primary dark:bg-dark-primary text-black px-6 sm:px-8 py-3 rounded-lg text-lg font-semibold transition-all hover:text-black"
           aria-label="Empieza ahora con nuestro servicio SaaS"
         >
           Empieza Ahora

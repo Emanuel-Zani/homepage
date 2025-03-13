@@ -64,7 +64,10 @@ const Pricing = () => {
                 </li>
               ))}
             </ul>
-            <button
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              transition={{ bounceDamping: 10, bounceStiffness: 600 }}
               className={`mt-6 px-6 py-3 font-semibold rounded-lg shadow-lg transition ${
                 plan.recommended
                   ? "bg-white text-black hover:bg-gray-200"
@@ -72,7 +75,7 @@ const Pricing = () => {
               }`}
             >
               Elegir Plan
-            </button>
+            </motion.button>
           </motion.div>
         ))}
       </div>

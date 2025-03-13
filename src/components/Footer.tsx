@@ -17,7 +17,7 @@ const Footer = () => {
             className="text-2xl hover:text-blue-600"
             aria-label="Facebook"
           >
-            <i className="fab fa-facebook"></i>
+            <i className="fa fa-facebook text-light-accent dark:text-dark-accent"></i>
           </a>
           <a
             href="https://twitter.com"
@@ -26,7 +26,7 @@ const Footer = () => {
             className="text-2xl hover:text-blue-400"
             aria-label="Twitter"
           >
-            <i className="fab fa-twitter"></i>
+            <i className="fa fa-twitter text-light-accent dark:text-dark-accent"></i>
           </a>
           <a
             href="https://linkedin.com"
@@ -35,7 +35,7 @@ const Footer = () => {
             className="text-2xl hover:text-blue-700"
             aria-label="LinkedIn"
           >
-            <i className="fab fa-linkedin"></i>
+            <i className="fa fa-linkedin text-light-accent dark:text-dark-accent"></i>
           </a>
         </div>
 

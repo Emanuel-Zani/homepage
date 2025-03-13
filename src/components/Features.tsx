@@ -29,10 +29,17 @@ const features = [
 
 const Features = () => {
   return (
-    <section className="w-full min-h-screen p-5 bg-light-background dark:bg-dark-background text-center">
+    <motion.section
+      initial={{ opacity: 0.5 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 1.2 }}
+      className="w-full p-5 bg-light-background dark:bg-dark-background text-center"
+    >
       <motion.h2
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
         transition={{ duration: 1 }}
         className="text-4xl font-bold mb-10 text-light-text dark:text-dark-text"
       >
@@ -44,8 +51,10 @@ const Features = () => {
           <motion.div
             key={index}
             initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2 * index }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            whileHover={{ scale: 1.1 }}
+            transition={{ duration: 0.5 }}
             className="bg-light-secondary dark:bg-dark-secondary text-light-primary dark:text-dark-primary p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300"
           >
             <div className="text-5xl">{feature.icon}</div>
@@ -58,7 +67,7 @@ const Features = () => {
           </motion.div>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 };
 
