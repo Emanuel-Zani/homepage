@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import backgroundImage from "../assets/img/BACKGROUND.png";
+const backgroundImage = `${import.meta.env.BASE_URL}img/background.png`;
 
 const DarkModeToggle: React.FC = () => {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
