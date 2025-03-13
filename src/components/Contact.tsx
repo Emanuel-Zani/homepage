@@ -36,31 +36,28 @@ const Contact = () => {
   };
 
   return (
-    <section className="py-20 bg-white text-center">
-      <motion.h2
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-        className="text-4xl font-bold mb-10 text-gray-800"
-      >
-        Contáctanos
-      </motion.h2>
+    <section className="w-full py-20 px-4 flex items-center justify-center min-h-screen bg-light-background dark:bg-dark-background">
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 0.5 }}
-        className="max-w-4xl mx-auto bg-gray-100 p-8 rounded-lg shadow-lg"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        className="w-full max-w-2xl bg-light-secondary dark:bg-dark-secondary p-6 md:p-10 lg:p-12 rounded-xl shadow-lg"
       >
-        {error && <p className="text-red-500 mb-4">{error}</p>}
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-light-text dark:text-dark-text mb-6">
+          Contáctanos
+        </h2>
+        {error && <p className="text-red-500 mb-4 text-center">{error}</p>}
         {success && (
-          <p className="text-green-500 mb-4">¡Mensaje enviado con éxito!</p>
+          <p className="text-green-500 mb-4 text-center">
+            ¡Mensaje enviado con éxito!
+          </p>
         )}
         <form onSubmit={handleSubmit} className="space-y-4">
           <input
             type="text"
             name="name"
             placeholder="Tu Nombre"
-            className="w-full p-3 rounded-lg border border-gray-300"
+            className="w-full p-3 rounded-lg border border-light-accent dark:border-dark-accent bg-light-secondary dark:bg-dark-secondary placeholder-light-text dark:placeholder-dark-text"
             value={formData.name}
             onChange={handleChange}
           />
@@ -68,7 +65,7 @@ const Contact = () => {
             type="email"
             name="email"
             placeholder="Tu Email"
-            className="w-full p-3 rounded-lg border border-gray-300"
+            className="w-full p-3 rounded-lg border border-light-accent dark:border-dark-accent bg-light-secondary dark:bg-dark-secondary placeholder-light-text dark:placeholder-dark-text"
             value={formData.email}
             onChange={handleChange}
           />
@@ -76,13 +73,13 @@ const Contact = () => {
             name="message"
             placeholder="Tu Mensaje"
             rows={4}
-            className="w-full p-3 rounded-lg border border-gray-300"
+            className="w-full p-3 rounded-lg border border-light-accent dark:border-dark-accent bg-light-secondary dark:bg-dark-secondary placeholder-light-text dark:placeholder-dark-text resize-none"
             value={formData.message}
             onChange={handleChange}
           ></textarea>
           <button
             type="submit"
-            className="w-full py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-lg hover:bg-blue-700 transition"
+            className="w-full py-3 bg-light-primary dark:bg-dark-primary text-white font-semibold rounded-lg shadow-md transition-transform duration-200 hover:scale-105 disabled:opacity-50"
             disabled={loading}
           >
             {loading ? "Enviando..." : "Enviar Mensaje"}

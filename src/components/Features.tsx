@@ -29,27 +29,32 @@ const features = [
 
 const Features = () => {
   return (
-    <section className="py-20 bg-white text-center">
+    <section className="w-full min-h-screen p-5 bg-light-background dark:bg-dark-background text-center">
       <motion.h2
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        className="text-4xl font-bold mb-10 text-gray-800"
+        className="text-4xl font-bold mb-10 text-light-text dark:text-dark-text"
       >
         Características
       </motion.h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-screen-lg mx-auto px-6">
         {features.map((feature, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 * index }}
-            className="bg-gray-100 p-6 rounded-lg shadow-lg"
+            className="bg-light-secondary dark:bg-dark-secondary text-light-primary dark:text-dark-primary p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300"
           >
             <div className="text-5xl">{feature.icon}</div>
-            <h3 className="text-2xl font-semibold mt-4">{feature.title}</h3>
-            <p className="text-gray-600 mt-2">{feature.description}</p>
+            <h3 className="text-2xl font-semibold mt-4 text-gray-900 dark:text-white">
+              {feature.title}
+            </h3>
+            <p className="text-gray-600 dark:text-gray-300 mt-2">
+              {feature.description}
+            </p>
           </motion.div>
         ))}
       </div>
