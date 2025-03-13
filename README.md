@@ -1,54 +1,60 @@
-# React + TypeScript + Vite
+# Homepage - Modern SaaS Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a modern, interactive, and high-performance landing page for a fictional SaaS product. It is built using React, TypeScript, and styled with Tailwind CSS. The page includes dynamic content fetched from an API, smooth animations, and a responsive design.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Hero Section**: Includes a headline, subheading, CTA button, and background image.
+- **Features Section**: Displays 3-4 key product features with icons and descriptions.
+- **Testimonials Section**: Dynamically fetches user testimonials from an API.
+- **Pricing Section**: Displays 3 pricing tiers, with the recommended plan highlighted.
+- **Contact Section**: Includes a simple contact form with basic validation.
+- **Footer**: Contains links to social media and company details.
 
-## Expanding the ESLint configuration
+### Additional Features (Optional)
+- **Dark Mode Toggle**: Allows switching between light and dark modes.
+- **Newsletter Subscription Form**: Mocked API integration for newsletter signup.
+- **Parallax Scrolling Effect**: Adds a smooth parallax effect for a more interactive experience.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Technologies Used
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **React** (with hooks and TypeScript)
+- **Tailwind CSS** for styling
+- **Framer Motion** for smooth animations
+- **JSONPlaceholder API** for fetching testimonials
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Installation
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. Clone the repository to your local machine:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+   ```bash
+   git clone https://github.com/yourusername/homepage.git
+Navigate to the project folder:
+
+bash
+Copiar
+Editar
+cd homepage
+Install dependencies:
+
+bash
+Copiar
+Editar
+npm install
+Run the development server:
+
+bash
+Copiar
+Editar
+npm run dev
+Your site should now be live at http://localhost:3000.
+
+Deployment
+This project is deployed live on Vercel. You can view the live demo here:
+
+Live Demo
+
+Usage
+The homepage is fully responsive and mobile-first.
+Scroll animations and hover effects enhance the user experience.
+Testimonials are fetched dynamically from https://jsonplaceholder.typicode.com/comments.
